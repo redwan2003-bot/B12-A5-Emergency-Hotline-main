@@ -1,4 +1,5 @@
 const services = [
+    // Add a unique id for each service for robustness
     {
         id: 1,
         icon: 'assets/emergency.png',
@@ -216,6 +217,7 @@ servicesGrid.addEventListener('click', (e) => {
         return;
     }
 
+    // Copy
     if (e.target.closest('.copy-btn')) {
         function afterCopy() {
             lastCopiedNumber = service.number;
@@ -230,24 +232,26 @@ servicesGrid.addEventListener('click', (e) => {
 
         if (navigator.clipboard && window.isSecureContext) {
             navigator.clipboard.writeText(service.number).then(afterCopy).catch(() => {
-                
+                // Fallback
                 window.prompt('Copy this number:', service.number);
                 afterCopy();
             });
         } else {
+            // Fallback for HTTP or unsupported browsers
             window.prompt('Copy this number:', service.number);
             afterCopy();
         }
         return;
     }
 
+    // Call
     if (e.target.closest('.call-btn') && coinCount >= 20) {
         handleCall(service.title, service.number);
         return;
     }
 });
 
-
+// Keyboard accessibility for service cards and buttons
 servicesGrid.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
     const card = e.target.closest('.service-card');
@@ -256,6 +260,7 @@ servicesGrid.addEventListener('keydown', (e) => {
     const service = services.find(s => s.id === id);
     if (!service) return;
 
+    // Favorite
     if (e.target.classList.contains('fav-btn')) {
         e.preventDefault();
         if (!favorites.includes(id)) {
@@ -271,7 +276,7 @@ servicesGrid.addEventListener('keydown', (e) => {
         return;
     }
 
-
+    // Copy
     if (e.target.classList.contains('copy-btn')) {
         e.preventDefault();
         navigator.clipboard.writeText(service.number).then(() => {
@@ -287,7 +292,7 @@ servicesGrid.addEventListener('keydown', (e) => {
         return;
     }
 
-
+    // Call
     if (e.target.classList.contains('call-btn') && coinCount >= 20) {
         e.preventDefault();
         handleCall(service.title, service.number);
@@ -308,7 +313,7 @@ clearHistoryBtn.addEventListener('click', () => {
     }
 });
 
-
+// Top Copy Button
 copyBtnTop.addEventListener('click', () => {
     if (!lastCopiedNumber) {
         showToast('No number copied yet.');
@@ -324,7 +329,7 @@ copyBtnTop.addEventListener('click', () => {
     });
 });
 
-
+// Toast Notification
 function showToast(msg) {
     let toast = document.createElement('div');
     toast.textContent = msg;
@@ -333,7 +338,7 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 1500);
 }
 
-
+// Initial Render
 renderServices();
 renderCallHistory();
 updateCountsUI();
@@ -343,4 +348,3 @@ if (lastCopiedNumber && !copiedNumbers.includes(lastCopiedNumber)) {
     saveState();
     updateCopyBtnTop();
 }
-
