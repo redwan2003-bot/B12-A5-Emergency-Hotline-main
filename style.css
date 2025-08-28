@@ -1,23 +1,19 @@
-/* Universal box-sizing for easier sizing */
-*,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* General Body Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     background-color: #e6f2ee;
 }
 
-/* Top Navigation Bar - Universal sticky glassmorphism */
 .top-nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.7); /* semi-transparent */
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
@@ -96,7 +92,6 @@ body {
     font-weight: bold;
 }
 
-/* Header Section */
 header {
     background: #006a4e;
     color: white;
@@ -121,7 +116,6 @@ header p {
     font-size: 16px;
 }
 
-/* Main Content */
 .container {
     display: flex;
     gap: 2rem;
@@ -212,7 +206,7 @@ header p {
 
 .service-buttons {
     display: flex;
-    gap: 0; /* Remove gap so buttons touch */
+    gap: 0;
     width: 100%;
 }
 
@@ -227,8 +221,8 @@ header p {
 .copy-btn {
     background-color: white;
     border: 1px solid #28a745;
-    border-right: none; /* Remove right border to avoid double border */
-    border-radius: 5px 0 0 5px; /* Only left corners rounded */
+    border-right: none;
+    border-radius: 5px 0 0 5px;
     color: #222;
     transition: background 0.2s, color 0.2s;
 }
@@ -237,12 +231,11 @@ header p {
     background-color: #28a745;
     color: white;
     border: 1px solid #28a745;
-    border-radius: 0 5px 5px 0; /* Only right corners rounded */
-    border-left: none; /* Remove left border to avoid double border */
+    border-radius: 0 5px 5px 0; 
+    border-left: none;
     transition: background 0.2s, color 0.2s;
 }
 
-/* Call History */
 .call-history {
     background: #fff;
     border-radius: 1rem;
@@ -292,7 +285,7 @@ header p {
 .history-list li {
     display: flex;
     align-items: center;
-    gap: 12px; /* space between elements */
+    gap: 12px;
     margin-bottom: 8px;
     font-size: 1rem;
 }
@@ -305,10 +298,9 @@ header p {
 .history-list li span:last-child {
     color: #888;
     font-size: 0.95em;
-    margin-left: auto; /* push time to the right if you want */
+    margin-left: auto; 
 }
 
-/* Toast Notification */
 .toast-message {
     position: fixed;
     bottom: 30px;
@@ -359,7 +351,7 @@ header p {
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
         border-bottom: 1px solid rgba(0,0,0,0.08);
-        /* Make nav bar float above content */
+
     }
     .logo-container {
         flex-direction: row;
@@ -384,7 +376,7 @@ header p {
     .logo {
         margin-right: 0;
     }
-    /* Optional: Center nav icons and copy button below */
+
     .nav-icons {
         justify-content: center;
         width: 100%;
@@ -424,7 +416,6 @@ header p {
     }
 }
 
-/* Make buttons and text scale well on very small screens */
 @media (max-width: 400px) {
     .service-card h3,
     .service-card p,
@@ -439,7 +430,7 @@ header p {
     }
 }
 
-/* Increase call history box width on larger screens */
+
 @media (min-width: 900px) {
     .call-history {
         max-width: 500px;
@@ -486,9 +477,10 @@ header p {
     outline: 2px solid #28a745;
 }
 
-/* Make sure .container never overflows */
+
 .container {
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
