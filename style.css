@@ -1,11 +1,9 @@
-/* General Body Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     background-color: #e6f2ee;
 }
 
-/* Top Navigation Bar */
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -80,7 +78,6 @@ body {
     font-weight: bold;
 }
 
-/* Header Section */
 header {
     background: #006a4e;
     color: white;
@@ -105,7 +102,6 @@ header p {
     font-size: 16px;
 }
 
-/* Main Content */
 .container {
     display: flex;
     justify-content: space-between;
@@ -201,7 +197,6 @@ header p {
     border: none;
 }
 
-/* Call History */
 .call-history {
     width: 300px;
     background-color: white;
@@ -251,7 +246,6 @@ header p {
     border-bottom: 1px solid #eee;
 }
 
-/* Toast Notification */
 .toast-message {
     position: fixed;
     bottom: 30px;
@@ -324,3 +318,4 @@ header p {
 .fav-btn:focus {
     outline: 2px solid #28a745;
 }
+
