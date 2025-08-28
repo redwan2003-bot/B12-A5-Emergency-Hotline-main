@@ -74,7 +74,7 @@ const copyBtnTop = document.querySelector('.copy-btn-top');
 
 let heartCount = 0;
 let coinCount = 100;
-let copyCount = 2; // Initial value from HTML
+let copyCount = 0; // Initial value from HTML
 let callHistory = [];
 
 function renderServices() {
@@ -173,3 +173,4 @@ clearHistoryBtn.addEventListener('click', () => {
 renderServices();
 coinCountSpan.textContent = coinCount;
 copyBtnTop.textContent = `${copyCount} Copy`;
+
