@@ -1,7 +1,9 @@
+*,
 *::before,
 *::after {
     box-sizing: border-box;
 }
+
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,11 +11,12 @@ body {
     background-color: #e6f2ee;
 }
 
+
 .top-nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.7); 
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
@@ -92,6 +95,7 @@ body {
     font-weight: bold;
 }
 
+/* Header Section */
 header {
     background: #006a4e;
     color: white;
@@ -115,6 +119,7 @@ header p {
     margin-top: 10px;
     font-size: 16px;
 }
+
 
 .container {
     display: flex;
@@ -232,9 +237,10 @@ header p {
     color: white;
     border: 1px solid #28a745;
     border-radius: 0 5px 5px 0; 
-    border-left: none;
+    border-left: none; 
     transition: background 0.2s, color 0.2s;
 }
+
 
 .call-history {
     background: #fff;
@@ -285,7 +291,7 @@ header p {
 .history-list li {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 12px; 
     margin-bottom: 8px;
     font-size: 1rem;
 }
@@ -300,6 +306,7 @@ header p {
     font-size: 0.95em;
     margin-left: auto; 
 }
+
 
 .toast-message {
     position: fixed;
@@ -483,4 +490,3 @@ header p {
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
