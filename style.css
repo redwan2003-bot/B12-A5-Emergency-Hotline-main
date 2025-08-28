@@ -250,3 +250,77 @@ header p {
     padding: 10px 0;
     border-bottom: 1px solid #eee;
 }
+
+/* Toast Notification */
+.toast-message {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+    z-index: 9999;
+    opacity: 0.95;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    pointer-events: none;
+    animation: fadeInOut 1.5s;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 0.95; }
+    90% { opacity: 0.95; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .call-history {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.copy-btn, .call-btn, .fav-btn, .copy-btn-top, .clear-history {
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.copy-btn:focus, .call-btn:focus, .fav-btn:focus, .copy-btn-top:focus, .clear-history:focus {
+    box-shadow: 0 0 0 2px #28a74555;
+}
+
+.call-btn[disabled], .copy-btn[disabled], .copy-btn-top[disabled] {
+    background-color: #ccc !important;
+    color: #888 !important;
+    cursor: not-allowed !important;
+    border: 1px solid #bbb !important;
+    opacity: 0.7;
+}
+
+.fav-btn {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.fav-btn.favorited {
+    color: red;
+}
+
+.fav-btn:focus {
+    outline: 2px solid #28a745;
+}
