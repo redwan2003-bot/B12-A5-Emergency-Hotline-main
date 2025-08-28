@@ -215,7 +215,6 @@ servicesGrid.addEventListener('click', (e) => {
         return;
     }
 
-
     if (e.target.closest('.copy-btn')) {
         function afterCopy() {
             lastCopiedNumber = service.number;
@@ -230,6 +229,7 @@ servicesGrid.addEventListener('click', (e) => {
 
         if (navigator.clipboard && window.isSecureContext) {
             navigator.clipboard.writeText(service.number).then(afterCopy).catch(() => {
+
                 window.prompt('Copy this number:', service.number);
                 afterCopy();
             });
@@ -241,11 +241,13 @@ servicesGrid.addEventListener('click', (e) => {
         return;
     }
 
+
     if (e.target.closest('.call-btn') && coinCount >= 20) {
         handleCall(service.title, service.number);
         return;
     }
 });
+
 
 servicesGrid.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
@@ -254,6 +256,7 @@ servicesGrid.addEventListener('keydown', (e) => {
     const id = Number(card.dataset.id);
     const service = services.find(s => s.id === id);
     if (!service) return;
+
 
     if (e.target.classList.contains('fav-btn')) {
         e.preventDefault();
@@ -269,6 +272,7 @@ servicesGrid.addEventListener('keydown', (e) => {
         renderServices();
         return;
     }
+
 
     if (e.target.classList.contains('copy-btn')) {
         e.preventDefault();
@@ -329,6 +333,7 @@ function showToast(msg) {
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 1500);
 }
+
 
 renderServices();
 renderCallHistory();
