@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Service Directory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-nav">
+    <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <div class="logo-text">
+            <span class="emergency">Emergency</span>
+            <span class="service">Service</span>
+        </div>
+    </div>
+    <div class="nav-icons">
+        <div class="nav-icon">
+            <i class="fas fa-heart"></i>
+            <span>0</span>
+        </div>
+        <div class="nav-icon">
+            <i class="fas fa-coins"></i>
+            <span>100</span>
+        </div>
+        <button class="copy-btn-top">Copy</button>
+    </div>
+</div>
+<header>
+    <div class="header-content">
+        <img src="assets/logo-dark.png" alt="Bangladesh Government Logo" class="gov-logo">
+        <h1>Emergency Service Directory</h1>
+        <p>Government Emergency Services at Your Fingertip – A Project by Government of the People's Republic of Bangladesh</p>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="services-grid">
+            <!-- Service cards will be dynamically generated here -->
+        </div>
+        <div class="call-history">
+            <div class="history-header">
+                <i class="fas fa-clock-rotate-left"></i>
+                <h2>Call History</h2>
+                <button class="clear-history">Clear</button>
+            </div>
+            <ul class="history-list">
+                <!-- Call history will be dynamically generated here -->
+            </ul>
+        </div>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
